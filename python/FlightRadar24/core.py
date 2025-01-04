@@ -16,15 +16,15 @@ class Core(ABC):
     user_login_url = flightradar_base_url + "/user/login"
     user_logout_url = flightradar_base_url + "/user/logout"
 
-    # Most tracked data URL
-    most_tracked_url = flightradar_base_url + "/flights/most-tracked"
-
     # Search data URL
-    search_data_url = flightradar_base_url + "/v1/search/web/find?query={}&limit=50"
+    search_data_url = flightradar_base_url + "/v1/search/web/find?query={}&limit={}"
 
     # Flights data URLs.
     real_time_flight_tracker_data_url = data_cloud_base_url + "/zones/fcgi/feed.js"
     flight_data_url = data_live_base_url + "/clickhandler/?flight={}"
+
+    # Historical data URL.
+    historical_data_url = flightradar_base_url + "/download/?flight={}&file={}&trailLimit=0&history={}"
 
     # Airports data URLs.
     api_airport_data_url = api_flightradar_base_url + "/airport.json"
@@ -36,6 +36,18 @@ class Core(ABC):
 
     # Zones data URL.
     zones_data_url = flightradar_base_url + "/js/zones.js.php"
+
+    # Weather data URL.
+    volcanic_eruption_data_url = flightradar_base_url + "/weather/volcanic"
+
+    # Most tracked URL
+    most_tracked_url = flightradar_base_url + "/flights/most-tracked"
+
+    # Airport disruptions URL.
+    airport_disruptions_url = flightradar_base_url + "/webapi/v1/airport-disruptions"
+
+    # Bookmarks URL.
+    bookmarks_url = flightradar_base_url + "/webapi/v1/bookmarks"
 
     # Country flag image URL.
     country_flag_url = flightradar_base_url + "/static/images/data/flags-small/{}.svg"

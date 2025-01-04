@@ -13,15 +13,33 @@ This SDK should only be used for your own educational purposes. If you are inter
 [![Downloads](https://static.pepy.tech/personalized-badge/flightradarapi?period=total&units=international_system&left_color=grey&right_color=orange&left_text=downloads)](https://pypi.org/project/FlightRadarAPI/)
 [![Frequency](https://img.shields.io/pypi/dm/flightradarapi?style=flat&label=frequency)](https://pypi.org/project/FlightRadarAPI/)
 
-## Installing FlightRadarAPI
-**For Python with pip:**
+## Installing FlightRadarAPI:
 ```
-pip install FlightRadarAPI
+$ pip install FlightRadarAPI
 ```
 
-**For Node.js with npm:**
+## Basic Usage:
+Import the class `FlightRadar24API` and create an instance of it.
+```py
+from FlightRadar24 import FlightRadar24API
+fr_api = FlightRadar24API()
 ```
-npm install flightradarapi
+
+**Getting flights list:**
+```py
+flights = fr_api.get_flights(...)  # Returns a list of Flight objects
+```
+**Getting airports list:**
+```py
+airports = fr_api.get_airports(...)  # Returns a list of Airport objects
+```
+**Getting airlines list:**
+```py
+airlines = fr_api.get_airlines()
+```
+**Getting zones list:**
+```py
+zones = fr_api.get_zones()
 ```
 
 ## Documentation
